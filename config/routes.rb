@@ -13,6 +13,9 @@ Rails.application.routes.draw do
     end
     resources :events do
       resources :tickets, :controller => "event_tickets"
+      collection do
+        post :bulk_update
+      end
     end
   end
 
