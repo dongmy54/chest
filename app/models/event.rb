@@ -1,6 +1,10 @@
 class Event < ApplicationRecord
-  # 挂载logo 上传图片字段
+  # 挂载logo 上传图片字段, 单张
   mount_uploader :logo, EventLogoUploader
+
+  # 上传多张images 
+  mount_uploaders :images, EventImageUploader
+  serialize :images, JSON
 
   include RankedModel
   ranks :row_order
