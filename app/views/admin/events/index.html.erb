@@ -26,6 +26,7 @@
 	    <td>
         <%= link_to "置顶", reorder_admin_event_path(event, :position => :first), :method => :post, :class => "btn btn-default" %>
         <%= link_to "置底", reorder_admin_event_path(event, :position => :last), :method => :post, :class => "btn btn-default" %>
+        <%= link_to "Registrations", admin_event_registrations_path(event), :class => "btn btn-default" %>
 	      <%= link_to "Tickets", admin_event_tickets_path(event), :class => "btn btn-default" %>
 	      <%= link_to "Edit", edit_admin_event_path(event), :class => "btn btn-default" %>
 	      <%= link_to "Delete", admin_event_path(event), :method => "delete", :data => { :confirm => "Are you sure?" }, :class => "btn btn-danger" %>
@@ -35,12 +36,12 @@
 	</tbody>
 	</table>
 
-<p>
-  <%= select_tag :event_status, options_for_select( Event::STATUS.map{ |s| [t(s, :scope => + "event.status"), s] }), :class => "form-control" %>
+  <p>
+    <%= select_tag :event_status, options_for_select( Event::STATUS.map{ |s| [t(s, :scope => + "event.status"), s] }), :class => "form-control" %>
 
-  <%= submit_tag t(:bulk_update), :class => "btn btn-primary" %>
-  <%= submit_tag t(:bulk_delete), :class => "btn btn-danger", :data => { :confirm => "Are you + sure?" } %>
-</p>
+    <%= submit_tag t(:bulk_update), :class => "btn btn-primary" %>
+    <%= submit_tag t(:bulk_delete), :class => "btn btn-danger", :data => { :confirm => "Are you + sure?" } %>
+  </p>
 <% end %>
 
 <script>
