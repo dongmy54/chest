@@ -55,6 +55,10 @@ gem 'paper_trail', '8.1.2' # 做版本管控
 gem 'rubyzip', '1.0.0'
 gem 'axlsx', '2.0.1'
 gem 'axlsx_rails', '0.5.1'
+# 上传图片
+gem 'carrierwave', '1.2.1'
+gem "mini_magick", '4.8.0'
+
 
 group :development, :test do
   gem 'rspec-rails', '3.5.2'

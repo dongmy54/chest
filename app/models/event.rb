@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  # 挂载logo 上传图片字段
+  mount_uploader :logo, EventLogoUploader
 
   include RankedModel
   ranks :row_order
