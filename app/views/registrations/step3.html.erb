@@ -2,16 +2,30 @@
 
 <h2>Step 3</h2>
 
+<% if @registration.errors.any? %>
+  <ul>
+  <% @registration.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+<% end %>
+<!-- 为保证js失效时数据仍能正确提升，这里保留了服务器验证-->
+
 <%= form_for @registration, :url => update_step3_event_registration_path(@event, @registration) do |f| %>
 
   <div class="form-group">
     <%= f.label :website %>
     <%= f.url_field :website, :class => "form-control" %>
+
+    <div class="help-block with-errors"></div>
   </div>
 
   <div class="form-group">
     <%= f.label :bio %>
     <%= f.text_area :bio, :class => "form-control" %>
+
+    <div class="help-block with-errors"></div> 
+    <!-- 这种验证是即时的，填写完一栏立马验证，但缺点是如果用户禁止了js功能 验证会失效-->
   </div>
 
   <div class="form-group">
@@ -20,3 +34,8 @@
   </div>
 
 <% end %>
+
+<!-- 这里使用前端js 验证，使用的是第三方验证 vendor/assets/javascripts/validator.min.js-->
+<script>
+  $("form").validator();
+</script>

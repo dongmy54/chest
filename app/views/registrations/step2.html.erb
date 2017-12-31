@@ -4,19 +4,33 @@
 
 <%= form_for @registration, :url => update_step2_event_registration_path(@event, @registration) do |f| %>
 
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, :class => "form-control" %>
+  <div class="form-group <%= (f.object.errors[:name].any?)? "has-error" : "" %>">
+    <!--  这里为内联验证-->
+    <%= f.label :name, "姓名", :class => "control-label" %>
+    <%= f.text_field :name, :class => "form-control", :required => true, :autofocus => true %>
+    <!-- 这里是HTML默认验证方式 -->
+    <% if f.object.errors[:name] %>  <!--  这里为内联验证-->
+      <span class="help-block"><%= safe_join(f.object.errors[:name], "、") %></span>
+    <% end %>
+    <!--为了展示验证的方式，这里保留了两种验证方式-->
   </div>
 
-  <div class="form-group">
+  <div class="form-group  <%= (f.object.errors[:email].any?)? "has-error" : "" %>">
     <%= f.label :email %>
-    <%= f.email_field :email, :class => "form-control" %>
+    <%= f.email_field :email, :class => "form-control", :required => true %>
+
+    <% if f.object.errors[:email] %>
+      <span class="help-block"><%= safe_join(f.object.errors[:email], "、") %></span>
+    <% end %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group  <%= (f.object.errors[:email].any?)? "has-error" : "" %>">
     <%= f.label :cellphone %>
-    <%= f.text_field :cellphone, :class => "form-control" %>
+    <%= f.text_field :cellphone, :class => "form-control", :required => true %>
+
+    <% if f.object.errors[:cellphone] %>
+      <span class="help-block"><%= safe_join(f.object.errors[:cellphone], "、") %></span>
+    <% end %>
   </div>
 
   <div class="form-group">
