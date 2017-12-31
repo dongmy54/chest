@@ -50,6 +50,7 @@ gem 'ranked-model', '0.4.0'
 gem 'jquery-ui-rails', '6.0.1'
 gem 'kaminari', '1.1.1'              # 用于分页 类似will_paginate
 gem 'ransack', '1.8.4' # 做模糊匹配，它是通过遍历做到的，数据量大时 需用 Elasticsearch 做
+gem 'paper_trail', '8.1.2' # 做版本管控
 
 group :development, :test do
   gem 'rspec-rails', '3.5.2'
