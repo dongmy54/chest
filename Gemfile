@@ -58,6 +58,8 @@ gem 'axlsx_rails', '0.5.1'
 # 上传图片
 gem 'carrierwave', '1.2.1'
 gem "mini_magick", '4.8.0'
+# 预览邮件
+gem 'letter_opener', '1.5.0'
 
 
 group :development, :test do
