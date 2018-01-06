@@ -19,6 +19,7 @@ class Event < ApplicationRecord
   accepts_nested_attributes_for :attachments, :allow_destroy => true, :reject_if => :all_blank
 
   has_many :registrations, :dependent => :destroy
+  has_many :registration_imports, :dependent => :destroy
 
   STATUS = ["draft", "public", "private"]
 
@@ -29,8 +30,8 @@ class Event < ApplicationRecord
 
   before_validation :generate_friendly_id, :on => :create
 
-   scope :only_public, -> { where( :status => "public" ) }
-   scope :only_available, -> { where( :status => ["public", "private"] ) }
+  scope :only_public, -> { where( :status => "public" ) }
+  scope :only_available, -> { where( :status => ["public", "private"] ) }
 
   def to_param
     self.friendly_id
