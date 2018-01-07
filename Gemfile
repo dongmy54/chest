@@ -62,6 +62,8 @@ gem "mini_magick", '4.8.0'
 gem 'letter_opener', '1.5.0'
 # 帮我们把本来的样式全部改成内联样式，方便邮件阅读器读取
 gem 'premailer-rails', '1.10.1'
+# 异步处理
+gem 'sidekiq', '5.0.5'
 
 
 group :development, :test do
