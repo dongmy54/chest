@@ -64,9 +64,13 @@ gem 'letter_opener', '1.5.0'
 gem 'premailer-rails', '1.10.1'
 # 异步处理
 gem 'sidekiq', '5.0.5'
+gem 'pg', '0.21.0'
 
 
 group :development, :test do
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
+  
   gem 'rspec-rails', '3.5.2'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', '9.0.6', platform: :mri
