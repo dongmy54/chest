@@ -17,7 +17,7 @@ install_plugin Capistrano::SCM::Git
 
 require 'capistrano/rails'
 require 'capistrano/passenger'
-require 'capistrano/rvm'
+set :rvm1_map_bins, %w(rake gem bundle ruby honeybadger)
 
 # Include tasks from other gems included in your Gemfile
 #
