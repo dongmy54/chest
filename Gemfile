@@ -65,7 +65,7 @@ gem 'premailer-rails', '1.10.1'
 # 异步处理
 gem 'sidekiq', '5.0.5'
 gem 'pg', '0.21.0'
-
+gem 'capistrano-rvm'
 
 group :development, :test do
   gem 'capistrano-rails'
