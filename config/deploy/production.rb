@@ -1,6 +1,6 @@
 set :branch, "master"
 
-server "120.79.203.195", user: "deploy", roles: %w{app db web}, my_property: :my_value
+server "112.74.176.85", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.

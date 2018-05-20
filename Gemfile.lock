@@ -320,6 +320,7 @@ DEPENDENCIES
   bootstrap-datepicker-rails (= 1.7.1.1)
   bootstrap-sass (= 3.3.7)
   byebug (= 9.0.6)
+  capistrano (~> 3.4)
   capistrano-passenger
   capistrano-rails
   capistrano-rvm

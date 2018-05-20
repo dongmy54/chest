@@ -14,7 +14,6 @@ gem 'bootstrap-sass', '3.3.7'
 gem 'devise', '4.2.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '1.3.13'
 # Use Puma as the app server
 gem 'puma', '3.8.2'
 # Use SCSS for stylesheets
@@ -68,6 +67,7 @@ gem 'pg', '0.21.0'
 gem 'capistrano-rvm'
 
 group :development, :test do
+  gem "capistrano", "~> 3.4"
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
   
