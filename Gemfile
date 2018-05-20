@@ -65,6 +65,7 @@ gem 'premailer-rails', '1.10.1'
 gem 'sidekiq', '5.0.5'
 gem 'pg', '0.21.0'
 gem 'capistrano-rvm'
+gem 'execjs'
 
 group :development, :test do
   gem "capistrano", "~> 3.4"

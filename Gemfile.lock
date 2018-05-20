@@ -328,6 +328,7 @@ DEPENDENCIES
   coffee-rails (= 4.2.1)
   devise (= 4.2.0)
   devise-i18n (= 1.1.1)
+  execjs
   faker (= 1.7.3)
   jbuilder (= 2.6.3)
   jquery-rails (= 4.3.1)
